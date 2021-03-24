@@ -25,19 +25,16 @@
       <h1>StanceShirt 3D Model Viewer</h1>
     </header>
     <main class="main">
-      <div id="notSupported" class="notSupported">
-        Sorry, <b>Web Serial</b> is not supported on this device, make sure you're
-        running Chrome 78 or later and have enabled the
-        <code>#enable-experimental-web-platform-features</code> flag in
-        <code>chrome://flags</code>
+      <div class="options">
+          <label for="ports">Port:</label>
+          <select id="ports">
+            <option value="prompt">Add a port...</option>
+          </select>
       </div>
-      <div id="webGLnotSupported" class="notSupported">
-        Sorry, <b>WebGL</b> is not supported on this device.
-      </div>
-
       <div class="controls">
         <button id="butConnect" type="button">Connect</button>
-        <select id="baudRate"></select>
+        <select id="baudRate"><option value="9600">9600</option> 
+        </select>
         <span>
           <select id="angle_type">
             <option value="quaternion">Quaternions</option>
