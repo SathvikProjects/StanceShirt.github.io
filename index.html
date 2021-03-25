@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta http-equiv="origin-trial" content="AuousLhuxAkHb7jnvhL1wBR8x+uFyTWFYmZMA2R0TB2oWWOjQrcA85qf0PErafuccNzWKekf2P3h0MoLf9ykbggAAABaeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZWNocm9tZWxhYnMuZ2l0aHViLmlvOjQ0MyIsImZlYXR1cmUiOiJTZXJpYWwiLCJleHBpcnkiOjE2MTM1MTE2MjZ9">
+  <!-- Token for http://localhost:8080/ -->
+     <meta http-equiv="origin-trial" content="An0ljMvC1hXs0YiXduDfUeFET2BDmYLxFsbNvDTxJHuEn6uNJHKmkvfuPq/ZY4gtPo0ilxKzplB1fmvr77SHFAwAAABJeyJvcmlnaW4iOiJodHRwOi8vbG9jYWxob3N0OjgwODAiLCJmZWF0dXJlIjoiU2VyaWFsIiwiZXhwaXJ5IjoxNjEzNTExNjY5fQ==">
     <title>StanceShirt 3D Model Viewer</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -30,8 +33,6 @@
           <select id="ports">
             <option value="prompt">Add a port...</option>
           </select>
-      </div>
-      <div class="controls">
         <button id="butConnect" type="button">Connect</button>
         <select id="baudRate"><option value="9600">9600</option> 
         </select>
@@ -41,7 +42,30 @@
             <option value="euler">Euler Angles</option>
           </select>
          </span>
-        <input type="checkbox" id="darkmode"> Dark Mode
+        <input type="checkbox" id="darkmode"> Dark Mode        
+        <input id="custom_baudrate" type="number" min="1" placeholder="Enter baudrate..." hidden>
+        <label for="databits">Data bits:</label>
+        <select id="databits">
+          <option value="7">7</option>
+          <option value="8" selected>8</option>
+        </select>
+        <label for="parity">Parity:</label>
+        <select id="parity">
+          <option value="none" selected>None</option>
+          <option value="even">Even</option>
+          <option value="odd">Odd</option>
+        </select>
+        <label for="stopbits">Stop bits:</label>
+        <select id="stopbits">
+          <option value="1" selected>1</option>
+          <option value="2">2</option>
+        </select>
+        <input id="rtscts" type="checkbox">
+        <label for="rtscts">Hardware flow control</label>
+        <input id="echo" type="checkbox">
+        <label for="echo">Local echo</label>
+        <input id="enter_flush" type="checkbox">
+        <label for="enter_flush">Flush on enter</label>
       </div>
       <div class="animation-container">
         <canvas id="canvas"></canvas>
@@ -55,6 +79,7 @@
         <input type="checkbox" id="showTimestamp"> Show Timestamp
         <button id="butClear" type="button">Clear</button>
       </div>
+      <div id="terminal"></div>
       <!--<textarea id="log" readonly></textarea>-->
     </main>
   </body>
