@@ -11,7 +11,7 @@
 
 import * as THREE from 'https://threejs.org/build/three.module.js';
 import {OrbitControls} from 'https://threejs.org/examples/jsm/controls/OrbitControls.js';
-import {OBJLoader2} from 'https://https://github.com/kaisalmen/WWOBJLoader/blob/dev/examples/jsm/loaders/OBJLoader2.js';
+import {OBJLoader} from 'https://threejs.org/examples/jsm/loaders/OBJLoader.js';
 
 let port;
 let reader;
