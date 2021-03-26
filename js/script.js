@@ -3,9 +3,9 @@
 // Note: the code will still work without this line, but without it you
 // will see an error in the editor
 /* global THREE */
-/* global TransformStream */
-/* global TextEncoderStream */
-/* global TextDecoderStream */
+global TransformStream
+global TextEncoderStream
+global TextDecoderStream
 
 'use strict';
 
