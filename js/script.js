@@ -13,8 +13,8 @@ global TextDecoderStream
 
 import * as THREE from 'https://threejs.org/build/three.module.js';
 import {OrbitControls} from 'https://threejs.org/examples/jsm/controls/OrbitControls.js';
-import {OBJLoader} from 'https://threejs.org/examples/jsm/loaders/OBJLoader.js';
-import {OBJLoader2} from 'https://rawcdn.githack.com/mrdoob/three.js/r96/examples/js/loaders/OBJLoader.2js';
+//import {OBJLoader} from 'https://threejs.org/examples/jsm/loaders/OBJLoader.js';
+import {OBJLoader2} from 'https://github.com/kaisalmen/WWOBJLoader/blob/dev/examples/jsm/loaders/OBJLoader2.js';
 
 let port;
 let reader;
