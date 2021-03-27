@@ -90,13 +90,12 @@ async function connect() {
 
   const decoder = new TextDecoderStream();
   inputDone = port.readable.pipeTo(decoder.writable);
-  const inputStream = decoder.readable;
-   // .pipeThrough(new TransformStream(new LineBreakTransformer()));
+  const inputStream = decoder.readable.pipeThrough(new TransformStream(new LineBreakTransformer()));
 
   reader = inputStream.getReader();
   readLoop().catch(async function(error) {
     toggleUIConnected(false);
-    //await disconnect();
+    await disconnect();
   });
 
 }
@@ -133,7 +132,7 @@ async function readLoop() {
   while (true) {
     const {value, done} = await reader.read();
     if (value) {
-      log.textContent += value + '\n';
+      //log.textContent += value + '\n';
       let plotdata;
       if (value.substr(0, 12) == "Orientation:") {
         orientation = value.substr(12).trim().split(",").map(x=>+x);
