@@ -13,8 +13,8 @@ global TextDecoderStream
 
 import * as THREE from 'https://threejs.org/build/three.module.js';
 import {OrbitControls} from 'https://threejs.org/examples/jsm/controls/OrbitControls.js';
-//import {OBJLoader} from 'https://threejs.org/examples/jsm/loaders/OBJLoader.js';
-import {OBJLoader2} from './OBJLoader2.js';
+import {OBJLoader} from 'https://threejs.org/examples/jsm/loaders/OBJLoader.js';
+//import {OBJLoader2} from './OBJLoader2.js';
 
 let port;
 let reader;
@@ -421,7 +421,7 @@ scene.background = new THREE.Color('black');
 }
 
 {
-  const objLoader = new OBJLoader2();
+  const objLoader = new OBJLoader();
   objLoader.load('assets/bunny.obj', (root) => {
     bunny = root;
     scene.add(root);
