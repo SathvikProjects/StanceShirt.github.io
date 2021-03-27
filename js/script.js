@@ -133,6 +133,7 @@ async function readLoop() {
   while (true) {
     const {value, done} = await reader.read();
     if (value) {
+      log.textContent += value + '\n';
       let plotdata;
       if (value.substr(0, 12) == "Orientation:") {
         orientation = value.substr(12).trim().split(",").map(x=>+x);
