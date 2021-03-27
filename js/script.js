@@ -19,7 +19,6 @@ let port;
 let reader;
 let inputDone;
 let outputDone;
-let inputStream;
 let outputStream;
 let showCalibration = false;
 
@@ -89,15 +88,15 @@ async function connect() {
   // - Wait for the port to open.toggleUIConnected
   await port.open({ baudrate: baudRate.value });
 
-  let decoder = new TextDecoderStream();
+  const decoder = new TextDecoderStream();
   inputDone = port.readable.pipeTo(decoder.writable);
-  inputStream = decoder.readable
-    .pipeThrough(new TransformStream(new LineBreakTransformer()));
+  const inputStream = decoder.readable;
+   // .pipeThrough(new TransformStream(new LineBreakTransformer()));
 
   reader = inputStream.getReader();
   readLoop().catch(async function(error) {
     toggleUIConnected(false);
-    await disconnect();
+    //await disconnect();
   });
 
 }
